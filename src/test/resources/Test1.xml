@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<test attrib='Hello&apos; World' attrib2="Hi">
+    Some text here
+
+    <!-- Test comment
+    which is multi lineFrom -->
+
+    Some text here too
+    <test2/>
+
+    And some is present here too, and this
+    is also multi line text.
+
+    <![CDATA[
+    <!-- Comment in CDATA -->
+    <message>test</message>
+    ]]>
+
+    Some more text here
+
+    <test3>Hello</test3>
+</test>
