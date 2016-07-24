@@ -1,6 +1,8 @@
 package com.shc.easyxml;
 
 /**
+ * A helper class used to keep track of the line numbers and column numbers of the input.
+ *
  * @author Sri Harsha Chilakapati
  */
 class StringStream

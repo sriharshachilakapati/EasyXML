@@ -49,7 +49,7 @@ Now let us take a look at accessing the attributes of a tag. The following is an
 And now in Java, you can do the following to access the attribute.
 
 ~~~java
-System.out.println(tag.attributes.get("myattrib").value); // Hello
+System.out.println(tag.getAttribute("myattrib").value); // Hello
 ~~~
 
 This also supports error checking. For example, let's try to parse an XML file with an error like this.

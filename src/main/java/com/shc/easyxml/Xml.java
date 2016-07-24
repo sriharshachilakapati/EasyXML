@@ -1,6 +1,17 @@
 package com.shc.easyxml;
 
 /**
+ * <p>This is the main XML parser class. All you need is the XML data in a string and you can use this class to parse
+ * the data into an {@link XmlTag} object. The following shows how to do that.</p>
+ *
+ * <pre>
+ *     String xmlString = ...;
+ *     XmlTag root = Xml.parse(xmlString);
+ * </pre>
+ *
+ * <p>Note that you are required to load the files if there are any on your own. This class just does the parsing, and
+ * doesn't include any file helpers.</p>
+ *
  * @author Sri Harsha Chilakapati
  */
 public final class Xml
@@ -9,6 +20,13 @@ public final class Xml
     {
     }
 
+    /**
+     * Constructs a {@link XmlTokenizer} object on the given input XML string, and parses the list of tokens that were
+     * extracted to create a simple DOM. It returns the root {@link XmlTag} instance to you.
+     *
+     * @param xmlString The string containing the contents of XML or the XML formatted data.
+     * @return An {@link XmlTag} instance that you can use to operate on the XML data.
+     */
     public static XmlTag parse(String xmlString)
     {
         XmlTokenizer tokenizer = new XmlTokenizer(xmlString);
@@ -45,8 +63,7 @@ public final class Xml
         // If the next token here is a NAME too, then we have to extract attributes
         while (token.type == XmlToken.Type.NAME)
         {
-            XmlAttribute attribute = parseAttribute(tokenizer);
-            tag.attributes.put(attribute.name, attribute);
+            tag.attributes.add(parseAttribute(tokenizer));
             token = tokenizer.extract();
         }
 

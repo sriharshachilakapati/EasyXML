@@ -1,6 +1,8 @@
 package com.shc.easyxml;
 
 /**
+ * A token is the basic part of the XML language.
+ *
  * @author Sri Harsha Chilakapati
  */
 public class XmlToken
@@ -54,6 +56,9 @@ public class XmlToken
                '}';
     }
 
+    /**
+     * Enumeration defining the type of the token.
+     */
     public enum Type
     {
         TAG_BEGIN,        // <
